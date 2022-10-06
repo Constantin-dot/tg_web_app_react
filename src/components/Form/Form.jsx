@@ -55,7 +55,7 @@ export const Form = () => {
     return () => {
       tg.offEvent('mainButtonClicked', onSendData);
     }
-  }, []);
+  }, [onSendData]);
 
   return (
     <div className={'form'}>
