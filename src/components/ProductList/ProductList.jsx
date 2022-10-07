@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { useTelegram } from "../../hooks/useTelegram";
 import { ProductItem } from "../ProductItem/ProductItem";
 import './ProductList.css';
@@ -71,11 +71,12 @@ export const ProductList = () => {
 
   return (
     <div className={'list'}>
-      {products.map(item => (
+      {products.map((item) => (
         <ProductItem
           product={item}
           onAdd={onAdd}
           className={'item'}
+          key={item.id}
         />
       ))}
     </div>
